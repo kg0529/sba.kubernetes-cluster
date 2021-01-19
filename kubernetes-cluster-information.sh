@@ -1,21 +1,25 @@
-echo ----------------
+echo ----------------------------------------
 echo     Services
-echo ----------------
+echo ----------------------------------------
 kubectl get services
+echo ""
 kubectl describe service fox-run-service
 echo ""
-echo ----------------
+echo ----------------------------------------
 echo       Pods
-echo ----------------
+echo ----------------------------------------
 kubectl get pods
 echo ""
-echo ----------------
+kubectl describe pods
+echo ""
+echo ----------------------------------------
 echo       Nodes
-echo ----------------
+echo ----------------------------------------
 kubectl get nodes
 echo ""
-echo ----------------
+echo ----------------------------------------
 echo    Deloyment
-echo ----------------
+echo ----------------------------------------
 kubectl get deployments
+echo ""
 kubectl describe deployment fox-run-deployment
