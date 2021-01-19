@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fox-run-deployment
 spec:
-  replicas: 3
+  replicas: 3 #run 3 pods 
   selector:
     matchLabels:
       app: fox-run-app
