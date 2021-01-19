@@ -1,9 +1,9 @@
 ----------------------------------------
 Services
 ----------------------------------------
-NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
-fox-run-service   NodePort    10.105.175.227   <none>        9090:30081/TCP   128m
-kubernetes        ClusterIP   10.96.0.1        <none>        443/TCP          143m
+NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+fox-run-service   NodePort    10.107.81.134   <none>        9090:31822/TCP   21s
+kubernetes        ClusterIP   10.96.0.1       <none>        443/TCP          2m23s
 
 Name:                     fox-run-service
 Namespace:                default
@@ -12,11 +12,11 @@ Annotations:              <none>
 Selector:                 app=fox-run-app
 Type:                     NodePort
 IP Families:              <none>
-IP:                       10.105.175.227
+IP:                       10.107.81.134
 IPs:                      <none>
 Port:                     <unset>  9090/TCP
 TargetPort:               9090/TCP
-NodePort:                 <unset>  30081/TCP
+NodePort:                 <unset>  31822/TCP
 Endpoints:                172.17.0.3:9090,172.17.0.4:9090,172.17.0.5:9090
 Session Affinity:         None
 External Traffic Policy:  Cluster
@@ -26,72 +26,15 @@ Events:                   <none>
 Pods
 ----------------------------------------
 NAME                                  READY   STATUS    RESTARTS   AGE
-fox-run-deployment-84c977cd47-2wb6m   1/1     Running   1          128m
-fox-run-deployment-84c977cd47-qkbdf   1/1     Running   1          128m
-fox-run-deployment-84c977cd47-z6ctc   1/1     Running   1          128m
+fox-run-deployment-84c977cd47-2gjcv   1/1     Running   0          23s
+fox-run-deployment-84c977cd47-4pdqj   1/1     Running   0          23s
+fox-run-deployment-84c977cd47-7tgsw   1/1     Running   0          23s
 
-Name:         fox-run-deployment-84c977cd47-2wb6m
+Name:         fox-run-deployment-84c977cd47-2gjcv
 Namespace:    default
 Priority:     0
 Node:         minikube/192.168.49.2
-Start Time:   Tue, 19 Jan 2021 03:43:26 -0500
-Labels:       app=fox-run-app
-              pod-template-hash=84c977cd47
-Annotations:  <none>
-Status:       Running
-IP:           172.17.0.4
-IPs:
-  IP:           172.17.0.4
-Controlled By:  ReplicaSet/fox-run-deployment-84c977cd47
-Containers:
-  fox-run-container:
-    Container ID:   docker://dfc2ba11164ac000ea8059c0538402ce7fc40ab5595f6737c0cd2fadc1691bcd
-    Image:          kg0529/fox-run
-    Image ID:       docker-pullable://kg0529/fox-run@sha256:2dc5d9ce14126229c1ed425ce67141a08fcd81cbafb11484fc131738d589d0ce
-    Port:           9090/TCP
-    Host Port:      0/TCP
-    State:          Running
-      Started:      Tue, 19 Jan 2021 05:47:45 -0500
-    Last State:     Terminated
-      Reason:       Completed
-      Exit Code:    0
-      Started:      Tue, 19 Jan 2021 03:43:32 -0500
-      Finished:     Tue, 19 Jan 2021 05:07:09 -0500
-    Ready:          True
-    Restart Count:  1
-    Environment:    <none>
-    Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-f4626 (ro)
-Conditions:
-  Type              Status
-  Initialized       True 
-  Ready             True 
-  ContainersReady   True 
-  PodScheduled      True 
-Volumes:
-  default-token-f4626:
-    Type:        Secret (a volume populated by a Secret)
-    SecretName:  default-token-f4626
-    Optional:    false
-QoS Class:       BestEffort
-Node-Selectors:  <none>
-Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
-                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
-Events:
-  Type    Reason          Age    From     Message
-  ----    ------          ----   ----     -------
-  Normal  SandboxChanged  4m39s  kubelet  Pod sandbox changed, it will be killed and re-created.
-  Normal  Pulling         4m34s  kubelet  Pulling image "kg0529/fox-run"
-  Normal  Pulled          4m24s  kubelet  Successfully pulled image "kg0529/fox-run" in 9.8987189s
-  Normal  Created         4m23s  kubelet  Created container fox-run-container
-  Normal  Started         4m21s  kubelet  Started container fox-run-container
-
-
-Name:         fox-run-deployment-84c977cd47-qkbdf
-Namespace:    default
-Priority:     0
-Node:         minikube/192.168.49.2
-Start Time:   Tue, 19 Jan 2021 03:43:26 -0500
+Start Time:   Tue, 19 Jan 2021 12:40:56 -0500
 Labels:       app=fox-run-app
               pod-template-hash=84c977cd47
 Annotations:  <none>
@@ -102,23 +45,18 @@ IPs:
 Controlled By:  ReplicaSet/fox-run-deployment-84c977cd47
 Containers:
   fox-run-container:
-    Container ID:   docker://39437b2db93c8cbaa4e77c1d90f0c7bbb9bfe2d7625c8859a1c21b481ae9723a
+    Container ID:   docker://c3701d5a5b762ac87c0bf038c7aee1db8372eb004fb43d5600fc1999ffb07a03
     Image:          kg0529/fox-run
-    Image ID:       docker-pullable://kg0529/fox-run@sha256:2dc5d9ce14126229c1ed425ce67141a08fcd81cbafb11484fc131738d589d0ce
+    Image ID:       docker-pullable://kg0529/fox-run@sha256:9863c96cb6447c85d12427923edb9b933741b2ed45e5a96fa8fac675a776a104
     Port:           9090/TCP
     Host Port:      0/TCP
     State:          Running
-      Started:      Tue, 19 Jan 2021 05:47:44 -0500
-    Last State:     Terminated
-      Reason:       Completed
-      Exit Code:    0
-      Started:      Tue, 19 Jan 2021 03:43:32 -0500
-      Finished:     Tue, 19 Jan 2021 05:07:09 -0500
+      Started:      Tue, 19 Jan 2021 12:41:01 -0500
     Ready:          True
-    Restart Count:  1
+    Restart Count:  0
     Environment:    <none>
     Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-f4626 (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-znhlt (ro)
 Conditions:
   Type              Status
   Initialized       True 
@@ -126,29 +64,29 @@ Conditions:
   ContainersReady   True 
   PodScheduled      True 
 Volumes:
-  default-token-f4626:
+  default-token-znhlt:
     Type:        Secret (a volume populated by a Secret)
-    SecretName:  default-token-f4626
+    SecretName:  default-token-znhlt
     Optional:    false
 QoS Class:       BestEffort
 Node-Selectors:  <none>
 Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
                  node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
 Events:
-  Type    Reason          Age    From     Message
-  ----    ------          ----   ----     -------
-  Normal  SandboxChanged  4m39s  kubelet  Pod sandbox changed, it will be killed and re-created.
-  Normal  Pulling         4m35s  kubelet  Pulling image "kg0529/fox-run"
-  Normal  Pulled          4m26s  kubelet  Successfully pulled image "kg0529/fox-run" in 9.1741064s
-  Normal  Created         4m24s  kubelet  Created container fox-run-container
-  Normal  Started         4m22s  kubelet  Started container fox-run-container
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  22s   default-scheduler  Successfully assigned default/fox-run-deployment-84c977cd47-2gjcv to minikube
+  Normal  Pulling    21s   kubelet            Pulling image "kg0529/fox-run"
+  Normal  Pulled     17s   kubelet            Successfully pulled image "kg0529/fox-run" in 3.8647015s
+  Normal  Created    17s   kubelet            Created container fox-run-container
+  Normal  Started    17s   kubelet            Started container fox-run-container
 
 
-Name:         fox-run-deployment-84c977cd47-z6ctc
+Name:         fox-run-deployment-84c977cd47-4pdqj
 Namespace:    default
 Priority:     0
 Node:         minikube/192.168.49.2
-Start Time:   Tue, 19 Jan 2021 03:43:26 -0500
+Start Time:   Tue, 19 Jan 2021 12:40:56 -0500
 Labels:       app=fox-run-app
               pod-template-hash=84c977cd47
 Annotations:  <none>
@@ -159,23 +97,18 @@ IPs:
 Controlled By:  ReplicaSet/fox-run-deployment-84c977cd47
 Containers:
   fox-run-container:
-    Container ID:   docker://51b6572cd5e4b8cbc9cac701562d039f5de5b6fca943d2160a21e513e021e57d
+    Container ID:   docker://6f3ee122fc5e67b27e8ce4cde6acfd7ce2d12fb841a4c40d0e5bb2c3a908310c
     Image:          kg0529/fox-run
-    Image ID:       docker-pullable://kg0529/fox-run@sha256:2dc5d9ce14126229c1ed425ce67141a08fcd81cbafb11484fc131738d589d0ce
+    Image ID:       docker-pullable://kg0529/fox-run@sha256:9863c96cb6447c85d12427923edb9b933741b2ed45e5a96fa8fac675a776a104
     Port:           9090/TCP
     Host Port:      0/TCP
     State:          Running
-      Started:      Tue, 19 Jan 2021 05:47:46 -0500
-    Last State:     Terminated
-      Reason:       Completed
-      Exit Code:    0
-      Started:      Tue, 19 Jan 2021 03:43:33 -0500
-      Finished:     Tue, 19 Jan 2021 05:07:07 -0500
+      Started:      Tue, 19 Jan 2021 12:41:02 -0500
     Ready:          True
-    Restart Count:  1
+    Restart Count:  0
     Environment:    <none>
     Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-f4626 (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-znhlt (ro)
 Conditions:
   Type              Status
   Initialized       True 
@@ -183,38 +116,90 @@ Conditions:
   ContainersReady   True 
   PodScheduled      True 
 Volumes:
-  default-token-f4626:
+  default-token-znhlt:
     Type:        Secret (a volume populated by a Secret)
-    SecretName:  default-token-f4626
+    SecretName:  default-token-znhlt
     Optional:    false
 QoS Class:       BestEffort
 Node-Selectors:  <none>
 Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
                  node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
 Events:
-  Type    Reason          Age    From     Message
-  ----    ------          ----   ----     -------
-  Normal  SandboxChanged  4m39s  kubelet  Pod sandbox changed, it will be killed and re-created.
-  Normal  Pulling         4m32s  kubelet  Pulling image "kg0529/fox-run"
-  Normal  Pulled          4m23s  kubelet  Successfully pulled image "kg0529/fox-run" in 8.9041758s
-  Normal  Created         4m22s  kubelet  Created container fox-run-container
-  Normal  Started         4m20s  kubelet  Started container fox-run-container
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  22s   default-scheduler  Successfully assigned default/fox-run-deployment-84c977cd47-4pdqj to minikube
+  Normal  Pulling    21s   kubelet            Pulling image "kg0529/fox-run"
+  Normal  Pulled     16s   kubelet            Successfully pulled image "kg0529/fox-run" in 5.1016454s
+  Normal  Created    16s   kubelet            Created container fox-run-container
+  Normal  Started    16s   kubelet            Started container fox-run-container
+
+
+Name:         fox-run-deployment-84c977cd47-7tgsw
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Tue, 19 Jan 2021 12:40:56 -0500
+Labels:       app=fox-run-app
+              pod-template-hash=84c977cd47
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.4
+IPs:
+  IP:           172.17.0.4
+Controlled By:  ReplicaSet/fox-run-deployment-84c977cd47
+Containers:
+  fox-run-container:
+    Container ID:   docker://dbc13ac5ea5ce7a2b2416ffa6ac65e3b2fee83c41d2ca8418844665cb9878559
+    Image:          kg0529/fox-run
+    Image ID:       docker-pullable://kg0529/fox-run@sha256:9863c96cb6447c85d12427923edb9b933741b2ed45e5a96fa8fac675a776a104
+    Port:           9090/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 19 Jan 2021 12:41:02 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-znhlt (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-znhlt:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-znhlt
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  22s   default-scheduler  Successfully assigned default/fox-run-deployment-84c977cd47-7tgsw to minikube
+  Normal  Pulling    21s   kubelet            Pulling image "kg0529/fox-run"
+  Normal  Pulled     17s   kubelet            Successfully pulled image "kg0529/fox-run" in 4.482014s
+  Normal  Created    16s   kubelet            Created container fox-run-container
+  Normal  Started    16s   kubelet            Started container fox-run-container
 
 ----------------------------------------
 Nodes
 ----------------------------------------
-NAME       STATUS   ROLES    AGE    VERSION
-minikube   Ready    master   143m   v1.19.4
+NAME       STATUS   ROLES    AGE     VERSION
+minikube   Ready    master   2m26s   v1.19.4
 
 ----------------------------------------
 Deloyment
 ----------------------------------------
 NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
-fox-run-deployment   3/3     3            3           128m
+fox-run-deployment   3/3     3            3           23s
 
 Name:                   fox-run-deployment
 Namespace:              default
-CreationTimestamp:      Tue, 19 Jan 2021 03:43:26 -0500
+CreationTimestamp:      Tue, 19 Jan 2021 12:40:55 -0500
 Labels:                 <none>
 Annotations:            deployment.kubernetes.io/revision: 1
 Selector:               app=fox-run-app
@@ -235,8 +220,11 @@ Pod Template:
 Conditions:
   Type           Status  Reason
   ----           ------  ------
-  Progressing    True    NewReplicaSetAvailable
   Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
 OldReplicaSets:  <none>
 NewReplicaSet:   fox-run-deployment-84c977cd47 (3/3 replicas created)
-Events:          <none>
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  24s   deployment-controller  Scaled up replica set fox-run-deployment-84c977cd47 to 3
