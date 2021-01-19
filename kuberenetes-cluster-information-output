@@ -1,0 +1,73 @@
+----------------
+Services
+----------------
+NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+fox-run-service   NodePort    10.105.175.227   <none>        9090:30081/TCP   27m
+kubernetes        ClusterIP   10.96.0.1        <none>        443/TCP          42m
+Name:                     fox-run-service
+Namespace:                default
+Labels:                   <none>
+Annotations:              <none>
+Selector:                 app=fox-run-app
+Type:                     NodePort
+IP Families:              <none>
+IP:                       10.105.175.227
+IPs:                      <none>
+Port:                     <unset>  9090/TCP
+TargetPort:               9090/TCP
+NodePort:                 <unset>  30081/TCP
+Endpoints:                172.17.0.3:9090,172.17.0.4:9090,172.17.0.5:9090
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+----------------
+Pods
+----------------
+NAME                                  READY   STATUS    RESTARTS   AGE
+fox-run-deployment-84c977cd47-2wb6m   1/1     Running   0          28m
+fox-run-deployment-84c977cd47-qkbdf   1/1     Running   0          28m
+fox-run-deployment-84c977cd47-z6ctc   1/1     Running   0          28m
+
+----------------
+Nodes
+----------------
+NAME       STATUS   ROLES    AGE   VERSION
+minikube   Ready    master   42m   v1.19.4
+
+----------------
+Deloyment
+----------------
+NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
+fox-run-deployment   3/3     3            3           28m
+Name:                   fox-run-deployment
+Namespace:              default
+CreationTimestamp:      Tue, 19 Jan 2021 03:43:26 -0500
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=fox-run-app
+Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=fox-run-app
+  Containers:
+   fox-run-container:
+    Image:        kg0529/fox-run
+    Port:         9090/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   fox-run-deployment-84c977cd47 (3/3 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  28m   deployment-controller  Scaled up replica set fox-run-deployment-84c977cd47 to 3

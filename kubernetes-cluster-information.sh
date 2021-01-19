@@ -2,7 +2,7 @@ echo ----------------
 echo     Services
 echo ----------------
 kubectl get services
-kubectl describe service fox-run-app
+kubectl describe service fox-run-service
 echo ""
 echo ----------------
 echo       Pods
@@ -17,5 +17,5 @@ echo ""
 echo ----------------
 echo    Deloyment
 echo ----------------
-kubetcl get deployments
-kubetcl describe deployment fox-run-deployment
+kubectl get deployments
+kubectl describe deployment fox-run-deployment
