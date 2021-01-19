@@ -1,7 +1,7 @@
 FROM python:3
 
 #set working directory
-wokdir /usr/src/app
+WORKDIR /usr/src/app
 
 #copy all files to the container
 COPY . .
