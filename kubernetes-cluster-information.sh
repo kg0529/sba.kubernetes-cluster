@@ -8,7 +8,7 @@ echo ""
 echo ----------------------------------------
 echo       Pods
 echo ----------------------------------------
-kubectl get pods
+kubectl get pods -o wide
 echo ""
 kubectl describe pods
 echo ""

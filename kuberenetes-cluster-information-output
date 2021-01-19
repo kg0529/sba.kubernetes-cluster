@@ -2,8 +2,8 @@
 Services
 ----------------------------------------
 NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-fox-run-service   NodePort    10.107.81.134   <none>        9090:31822/TCP   21s
-kubernetes        ClusterIP   10.96.0.1       <none>        443/TCP          2m23s
+fox-run-service   NodePort    10.107.81.134   <none>        9090:31822/TCP   101m
+kubernetes        ClusterIP   10.96.0.1       <none>        443/TCP          103m
 
 Name:                     fox-run-service
 Namespace:                default
@@ -25,10 +25,10 @@ Events:                   <none>
 ----------------------------------------
 Pods
 ----------------------------------------
-NAME                                  READY   STATUS    RESTARTS   AGE
-fox-run-deployment-84c977cd47-2gjcv   1/1     Running   0          23s
-fox-run-deployment-84c977cd47-4pdqj   1/1     Running   0          23s
-fox-run-deployment-84c977cd47-7tgsw   1/1     Running   0          23s
+NAME                                  READY   STATUS    RESTARTS   AGE    IP           NODE       NOMINATED NODE   READINESS GATES
+fox-run-deployment-84c977cd47-2gjcv   1/1     Running   0          101m   172.17.0.3   minikube   <none>           <none>
+fox-run-deployment-84c977cd47-4pdqj   1/1     Running   0          101m   172.17.0.5   minikube   <none>           <none>
+fox-run-deployment-84c977cd47-7tgsw   1/1     Running   0          101m   172.17.0.4   minikube   <none>           <none>
 
 Name:         fox-run-deployment-84c977cd47-2gjcv
 Namespace:    default
@@ -72,14 +72,7 @@ QoS Class:       BestEffort
 Node-Selectors:  <none>
 Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
                  node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
-Events:
-  Type    Reason     Age   From               Message
-  ----    ------     ----  ----               -------
-  Normal  Scheduled  22s   default-scheduler  Successfully assigned default/fox-run-deployment-84c977cd47-2gjcv to minikube
-  Normal  Pulling    21s   kubelet            Pulling image "kg0529/fox-run"
-  Normal  Pulled     17s   kubelet            Successfully pulled image "kg0529/fox-run" in 3.8647015s
-  Normal  Created    17s   kubelet            Created container fox-run-container
-  Normal  Started    17s   kubelet            Started container fox-run-container
+Events:          <none>
 
 
 Name:         fox-run-deployment-84c977cd47-4pdqj
@@ -124,14 +117,7 @@ QoS Class:       BestEffort
 Node-Selectors:  <none>
 Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
                  node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
-Events:
-  Type    Reason     Age   From               Message
-  ----    ------     ----  ----               -------
-  Normal  Scheduled  22s   default-scheduler  Successfully assigned default/fox-run-deployment-84c977cd47-4pdqj to minikube
-  Normal  Pulling    21s   kubelet            Pulling image "kg0529/fox-run"
-  Normal  Pulled     16s   kubelet            Successfully pulled image "kg0529/fox-run" in 5.1016454s
-  Normal  Created    16s   kubelet            Created container fox-run-container
-  Normal  Started    16s   kubelet            Started container fox-run-container
+Events:          <none>
 
 
 Name:         fox-run-deployment-84c977cd47-7tgsw
@@ -176,26 +162,19 @@ QoS Class:       BestEffort
 Node-Selectors:  <none>
 Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
                  node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
-Events:
-  Type    Reason     Age   From               Message
-  ----    ------     ----  ----               -------
-  Normal  Scheduled  22s   default-scheduler  Successfully assigned default/fox-run-deployment-84c977cd47-7tgsw to minikube
-  Normal  Pulling    21s   kubelet            Pulling image "kg0529/fox-run"
-  Normal  Pulled     17s   kubelet            Successfully pulled image "kg0529/fox-run" in 4.482014s
-  Normal  Created    16s   kubelet            Created container fox-run-container
-  Normal  Started    16s   kubelet            Started container fox-run-container
+Events:          <none>
 
 ----------------------------------------
 Nodes
 ----------------------------------------
-NAME       STATUS   ROLES    AGE     VERSION
-minikube   Ready    master   2m26s   v1.19.4
+NAME       STATUS   ROLES    AGE    VERSION
+minikube   Ready    master   103m   v1.19.4
 
 ----------------------------------------
 Deloyment
 ----------------------------------------
 NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
-fox-run-deployment   3/3     3            3           23s
+fox-run-deployment   3/3     3            3           101m
 
 Name:                   fox-run-deployment
 Namespace:              default
@@ -224,7 +203,4 @@ Conditions:
   Progressing    True    NewReplicaSetAvailable
 OldReplicaSets:  <none>
 NewReplicaSet:   fox-run-deployment-84c977cd47 (3/3 replicas created)
-Events:
-  Type    Reason             Age   From                   Message
-  ----    ------             ----  ----                   -------
-  Normal  ScalingReplicaSet  24s   deployment-controller  Scaled up replica set fox-run-deployment-84c977cd47 to 3
+Events:          <none>
